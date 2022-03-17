@@ -1,0 +1,11 @@
+def greet_party_guests(names)
+  names.each do |name|
+    puts guest_greeting_for name
+  end
+end
+
+def guest_greeting_for(name)
+  "Hello, #{name}! Welcome to the party"_
+end
+
+greet_party_guests("Amanda", "Matt", "Joe", "Joe", "Joe")
