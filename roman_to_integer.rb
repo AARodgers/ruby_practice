@@ -21,17 +21,20 @@
 
 # @param {String} s
 # @return {Integer}
-# def roman_to_int(s)
-#   a = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000]]
-#   hash = a.to_h
-# end
+def roman_to_int(s)
+  a = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000]]
+  hash = a.to_h
 
-# puts roman_to_int('III')
+  s.each_char do |c|
+    if ha
+  end
+end
+
+puts roman_to_int('III')
 
 def interate_thr_string(s)
   b = s.chars.inspect
   b
 end
-
 puts interate_thr_string('III')
 => ["I", "I", "I"]
