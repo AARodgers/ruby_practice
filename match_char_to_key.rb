@@ -9,7 +9,7 @@ def match(s)
       a << hash[c]
     end
   end
-  a.inspect
+  a
 end
 
 puts match('III')

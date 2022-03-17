@@ -25,16 +25,14 @@ def roman_to_int(s)
   a = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000]]
   hash = a.to_h
 
+  a = []
+
   s.each_char do |c|
-    if ha
+    if hash.has_key?(c)
+      a << hash[c]
+    end
   end
+  a.sum
 end
 
-puts roman_to_int('III')
-
-def interate_thr_string(s)
-  b = s.chars.inspect
-  b
-end
-puts interate_thr_string('III')
-=> ["I", "I", "I"]
+puts roman_to_int("MCMXCIV")
