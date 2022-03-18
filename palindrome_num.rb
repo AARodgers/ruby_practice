@@ -6,17 +6,14 @@
 # @return {Boolean}
 
 def is_palindrome(x)
-  array = x.to_s.chars
-
+  # make number into an array of it's numbers
+  array1 = x.to_s.chars
+  array2 = array1.reverse
+  # make hash and make the key
   hash = {}
-  array.each do |i|
+  array1.each do |i|
   hash[i] = i
   end
-  if hash.
-    return true
-  else
-    return false
-  end
-end
+
 
 puts is_palindrome(123)
