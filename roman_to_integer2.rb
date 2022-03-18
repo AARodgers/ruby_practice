@@ -17,14 +17,14 @@ def roman_to_int(s)
 
   total = 0
   while true do
-    # puts "I am working on #{s}"
+     # puts "I am working on #{s}"
     roman_symbols_to_find.each do |sym, val|
-      # puts "#{sym}: #{val}, #{s.start_with?(sym)}"
+       # puts "#{sym}: #{val}, #{s.start_with?(sym)}"
 
       if s.start_with?(sym)
         s = s.slice(sym.length, s.length)
         total += val
-        # puts "I matched sym #{sym}. Now s = #{s} and total = #{total}"
+         # puts "I matched sym #{sym}. Now s = #{s} and total = #{total}"
         break
       end
     end
