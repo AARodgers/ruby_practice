@@ -12,17 +12,17 @@
 
 def checking_for_combos_in_string(s)
   sum = 100
-  a = s.scan('IV').count
-  b = s.scan('IX').count
-  c = s.scan('XL').count
-  d = s.scan('XC').count
-  e = s.scan('CD').count
-  f = s.scan('CM').count
+  a = (s.scan('IV').count * 1)
+  b = s.scan('IX').count * 1
+  c = s.scan('XL').count * 10
+  d = s.scan('XC').count * 10
+  e = s.scan('CD').count * 100
+  f = s.scan('CM').count * 100
 
-  if a > 0
-    sum = (sum - (a * 1))
+  if s.include?('a')
+    return true
   end
-  sum
+
 end
 
 puts checking_for_combos_in_string("MCMXCIV")

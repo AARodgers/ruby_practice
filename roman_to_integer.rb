@@ -21,18 +21,65 @@
 
 # @param {String} s
 # @return {Integer}
+# def roman_to_int(s)
+#   a = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000]]
+#   hash = a.to_h
+
+#   a = []
+
+#   s.each_char do |c|
+#     if hash.has_key?(c)
+#       a << hash[c]
+#     end
+#   end
+#   a.sum
+# end
+# puts roman_to_int("MCMXCIV")
+
+# def roman_to_int(s)
+  # a1 = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000], ['IV', 4], ['IX', 9], ['XL', 40], ['XC', 90], ['CD', 400], ['CM', 900]]
+  # hash1 = a1.to_h
+# end
+# puts roman_to_int("MCMXCIV")
+
 def roman_to_int(s)
-  a = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000]]
-  hash = a.to_h
+  roman_symbols_to_find = [
+    ["IV", 4],
+    ["IX", 9],
+    ["XL", 40],
+    ["XC", 90],
+    ["CD", 400],
+    ["CM", 900],
+    ["I", 1],
+    ["V", 5],
+    ["X", 10],
+    ["L", 50],
+    ["C", 100],
+    ["D", 500],
+    ["M", 1000],
+  ]
 
-  a = []
+  total = 0
+  while true do
+    # puts "I am working on #{s}"
+    roman_symbols_to_find.each do |sym, val|
+      puts "#{sym}: #{val}", #{s.start_with?(sym)}"
 
-  s.each_char do |c|
-    if hash.has_key?(c)
-      a << hash[c]
+      # if s.start_with?(sym)
+      #   s = s.slice(sym.length, s.length)
     end
   end
-  a.sum
+  #       total += val
+  #       # puts "I matched sym #{sym}. Now s = #{s} and total = #{total}"
+  #       break
+  #     end
+  #   end
+
+  #   if s.length == 0
+  #     break
+  #   end
+  # end
+  # total
 end
 
 puts roman_to_int("MCMXCIV")
