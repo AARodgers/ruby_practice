@@ -7,10 +7,15 @@
 
 def is_palindrome(x)
   array = x.to_s.chars
-  if array[0] != array[-1]
+
+  hash = {}
+  array.each do |i|
+  hash[i] = i
+  end
+  if hash.
+    return true
+  else
     return false
-  elsif
-    
   end
 end
 
