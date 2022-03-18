@@ -15,7 +15,8 @@ def is_palindrome(x)
   array1.each_with_index do |num, index|
     hash[num] = array2[index]
   end
-
+  # put into an array any key/value pairs that aren't equal, if array is empty, it is a palindrome
+  
   a = hash.keys.select { |key| key != hash[key] }
     if a.empty?
       puts true
