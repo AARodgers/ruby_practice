@@ -9,11 +9,19 @@ def is_palindrome(x)
   # make number into an array of it's numbers
   array1 = x.to_s.chars
   array2 = array1.reverse
-  # make hash and make the key
-  hash = {}
-  array1.each do |i|
-  hash[i] = i
+  # make hash with keys being first array and values being array1 in reverse
+  hash = Hash.new
+
+  array1.each_with_index do |num, index|
+    hash[num] = array2[index]
   end
 
+  a = hash.keys.select { |key| key != hash[key] }
+    if a.empty?
+      puts true
+    else
+      puts false
+    end
+end
 
-puts is_palindrome(123)
+puts is_palindrome(11211)
