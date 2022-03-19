@@ -1,8 +1,9 @@
 # make a hash out of two arrays
 
 def arrays_2_hash
-  array1 = [1, 2, 3]
-  array2 = [3, 2, 1]
+  x = 120030221
+  array1 = x.to_s.chars
+  array2 = array1.reverse
 
   hash = Hash.new
 
