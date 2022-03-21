@@ -15,38 +15,31 @@
 # @return {Boolean}
 
 # if s.size.odd? return false
-# there should be the same number of '(' and ')'
+# there should be the same number of '(' and ')' but in correct order
 
 # def is_valid(s)
 #   if s.size.odd?
 #     puts false
 #   else
-
 #   end
 # end
 
 # puts is_valid("{}{}}")
 
 
-# def is_valid(s)
-#   arr = s.chars
-#   i = 0
-#   arr.each_with_index do |c, i|
-#     if c[i] == '(' && c[i + 1] != ')'
-#       puts false
-#     elsif
-#       c[i] == '{' && c[i +1] != '}'
-#       puts false
-#     elsif
-#       c[i] == '[' && c[i +1] != ']'
-#       puts false
-#     else
-#       puts true
-#     end
-#   end
-# end
+def is_valid(s)
+  arr = s.chars
+  i = 0
+  sym = []
+    arr.each_with_index do |c, i|
+      if (c[i] == '(') && (c[i + 1] == '(')
+        sym << 'true'
+      end
+    end
+  puts sym
+end
 
-# puts is_valid("()[]{}")
+puts is_valid("()")
 
 # def is_valid(s)
 #   if s.size.odd?
@@ -81,17 +74,33 @@
 
 # puts is_valid("()[]{}()")
 
-def is_valid(s)
-  if s.size.odd?
-    return false
-  end
-  arr = s.chars
-  if arr.count('(') != arr.count(')') then return false
-  elsif arr.count('{') != arr.count('}') then return false
-  elsif arr.count('[') != arr.count(']') then return false
-  else
-    return true
-  end
-end
+# def is_valid(s)
+#   if s.size.odd?
+#     return false
+#   end
+#   arr = s.chars
+#   if arr.count('(') != arr.count(')') then return false
+#   elsif arr.count('{') != arr.count('}') then return false
+#   elsif arr.count('[') != arr.count(']') then return false
+#   else
+#     return true
+#   end
+# end
+# puts is_valid("()[]{}(")
+# Wrong Answer
+# Details
+# Input
+# "([)]"
+# Output
+# true
+# Expected
+# false
 
-puts is_valid("()[]{}(")
+# def is_valid(s)
+
+# end
+
+# def base_case_1
+# end
+
+# puts base_case('()')
