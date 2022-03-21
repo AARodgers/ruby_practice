@@ -9,4 +9,5 @@ def array_to_hash_with_indexes
 end
 
 puts array_to_hash_with_indexes
+# return {2=>0, 7=>1, 11=>2, 15=>3}
 
