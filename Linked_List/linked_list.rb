@@ -67,7 +67,44 @@ class LinkedList
     end
   end
 
-  
+  def remove(value)
+    return if head.nil?
+    # go over each element until you find the element that
+    # you want to remove
+    node = head
+    prev_node = nil
+    # is the previous node of the node we are looking for
+    # set it to nil b. we are starting at the head so there
+    # is no previous node, so the value would be nil
+    # keep searching through node values until you find
+    # the node with the value that we are searching for
+    until(node.nil?)
+      if(node.value == value)
+        # take the node that is before the node we found
+        # and set that nodes next value equal to the node
+        # we found value
+        if !prev_node.nil?
+          prev_node.nextNode = node.nextNode
+          return
+          # if we do find this need to stop loop with return
+        else
+          # means prev_node is nil so we are on the head of the list
+          # so set head to nil b. we want to remove it and it
+          # is the only node
+          self.head = nil
+          return
+        end
+        # this allows us to progress to the next nodes and exit until loop
+        # otherwise loop would just continue
+        # it skip over the node and cuts it out of the list
+
+      end
+      prev_node = node
+      node = node.nextNode
+    end
+  end
+
+
 
   private
 
@@ -96,7 +133,15 @@ ll = LinkedList.new
 # puts ll.find(20)
 
 #prepend test (new head should now have a value of 10)
-ll.prepend(10)
-ll.prepend(20)
-puts ll.head.value # should be 20
-puts ll.head.nextNode.value # should be 10
+# ll.prepend(10)
+# ll.prepend(20)
+# puts ll.head.value # should be 20
+# puts ll.head.nextNode.value # should be 10
+
+#test remove method, add these values and remove 20
+ll.add(10)
+ll.add(20)
+ll.add(30)
+ll.remove(20)
+puts ll.head.value
+puts ll.head.nextNode.value
