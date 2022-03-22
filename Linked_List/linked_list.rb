@@ -13,6 +13,7 @@ class LinkedList
   end
 
   # add a node with a value to the list
+  # you don't need self before in these methods
   def add(value)
     #check to see if list is empty first
     if(self.head.nil?)
@@ -50,6 +51,24 @@ class LinkedList
     false
   end
 
+  # add a node to the start of the list(prepend)
+  # if just reading the attribute don't need self
+  # but if setting it or changing it, need self
+  def prepend(value)
+    # check to see if list is empty, if so, create a new
+    # node, store a value in it and set it as head
+    if head.nil?
+      self.head = Node.new(value, nil)
+    else
+      # if list isn't empty, replace old head with new node
+      # and then point the new node's nextNode attribute to old head
+      old_head = self.head
+      self.head = Node.new(value, old_head)
+    end
+  end
+
+  
+
   private
 
   class Node
@@ -63,15 +82,21 @@ class LinkedList
 end
 
 ll = LinkedList.new
-ll.add (10)
-ll.add (20)
+# ll.add (10)
+# ll.add (20)
 # make a new linked list and add 2 new nodes with values
 # 10 and 20
-puts ll.head.value
-puts ll.head.nextNode.value
+# puts ll.head.value
+# puts ll.head.nextNode.value
 # check to see heads value
-puts ll.find(10)
+# puts ll.find(10)
 # is there a node with value 10? => true
-puts ll.find(70)
+# puts ll.find(70)
 # should return false
-puts ll.find(20)
+# puts ll.find(20)
+
+#prepend test (new head should now have a value of 10)
+ll.prepend(10)
+ll.prepend(20)
+puts ll.head.value # should be 20
+puts ll.head.nextNode.value # should be 10
