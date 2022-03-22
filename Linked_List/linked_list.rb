@@ -139,9 +139,16 @@ ll = LinkedList.new
 # puts ll.head.nextNode.value # should be 10
 
 #test remove method, add these values and remove 20
+# ll.add(10)
+# ll.add(20)
+# ll.add(30)
+# ll.remove(20)
+# puts ll.head.value
+# puts ll.head.nextNode.value
+
+# edge case with one node
 ll.add(10)
-ll.add(20)
-ll.add(30)
-ll.remove(20)
-puts ll.head.value
-puts ll.head.nextNode.value
+ll.remove(10)
+puts ll.head
+# should return nil because we removed the only node
+# nil looks like nothing in the terminal (Nothing prints out)

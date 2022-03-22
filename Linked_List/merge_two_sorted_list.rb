@@ -26,8 +26,16 @@
 # @param {ListNode} list2
 # @return {ListNode}
 
+
+  # put a pointer at the beginning of each list
+  # use a dummy head to build new list, because it is easier to build something that already has a state or
+  # isn't null or nil, call it cur for current node
+  # the lesser item gets put in first, if equal, either one can go in
+  # apend the lesser one to list
+  # cur is dummy head, compare two values of list put, lower one in list and
+  # then point cur to left over node
+
 def merge_two_lists(list1, list2)
-  
 end
 
 puts merge_two_lists(list1 = [1,2,4], list2 = [1,3,4])
