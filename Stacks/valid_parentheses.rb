@@ -27,19 +27,19 @@
 # puts is_valid("{}{}}")
 
 
-def is_valid(s)
-  arr = s.chars
-  i = 0
-  sym = []
-    arr.each_with_index do |c, i|
-      if (c[i] == '(') && (c[i + 1] == '(')
-        sym << 'true'
-      end
-    end
-  puts sym
-end
+# def is_valid(s)
+#   arr = s.chars
+#   i = 0
+#   sym = []
+#     arr.each_with_index do |c, i|
+#       if (c[i] == '(') && (c[i + 1] == '(')
+#         sym << 'true'
+#       end
+#     end
+#   puts sym
+# end
 
-puts is_valid("()")
+# puts is_valid("()")
 
 # def is_valid(s)
 #   if s.size.odd?
@@ -104,3 +104,39 @@ puts is_valid("()")
 # end
 
 # puts base_case('()')
+
+def is_valid(s)
+  counterparts = {
+    '(' => ')',
+    '[' => ']',
+    '{' => '}',
+  }
+  arr = s.chars
+  stack = []
+  arr.each do |c|
+    if '{[('.include?(c)
+      # if the string includes c it is an open bracket
+      stack.push(c)
+      # if it is open, push it onto the stack
+    else
+      # if it is not open, than it is closed
+      open_sym = stack.pop
+      # take the last symbol off of the stack and compare it to the closed symbol using the hash
+      close_sym = counterparts[open_sym]
+      if close_sym != c
+        return false
+      end
+    end
+  end
+  if stack.empty?
+    return true
+  else
+    return false
+  end
+end
+
+puts is_valid('([{}])')
+puts is_valid('([)]')
+puts is_valid('{{}[][[[]]]}')
+puts is_valid('([{}])))))))))')
+puts is_valid('[[')
