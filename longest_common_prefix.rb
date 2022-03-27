@@ -36,11 +36,25 @@
 # puts longest_common_prefix(["flower","flow","flight"])
 
 def longest_common_prefix(strs)
-  min, max = strs.minmax
-  # => ["flight", "flower"]
-  idx = min.size.times { |i| break i if min[i] != min[i]}
-  # ? how does this iterate over all of the words? it just seems to do min and max word
-  min[0..idx]
+    i = 0
+    first_word = strs[0]
+    rest_words = strs.slice(1, strs.length)
+    result = ''
+    while true
+        # iterate over each rest-word
+        rest_words.each do |word|
+            # if a rest-word's char doesn't equal the first-word's char,
+            # then there are no more matches, so return the prefix that we have
+            if word[i] != first_word[i]
+                return result
+            end
+        end
+        # we have gotten through all the rest-words,
+        # and the characters in position i all matched,
+        # so add the match to result
+        result += first_word[i]
+        i += 1
+    end
 end
 
-longest_common_prefix(["flower","flow","flight"])
+puts longest_common_prefix(["flower","flow","flight"])
