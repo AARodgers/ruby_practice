@@ -7,29 +7,27 @@
 # @return {Integer}
 
 def search_insert(nums, target)
+  #return 0 if the target is less than the first item in the array
+  return 0 if target < nums[0]
   # if the array includes the target, return the index of the target
   return nums.index(target) if nums.include?(target)
-
-  nums.each_with_index do |n, i|
-    # return the last numbers index plus one if the target is bigger than the last number in the array
-    return nums.index(nums[-1]) + 1 if target > nums[-1]
-    # if the target is smaller than the first number in the array, return 
-
-    if target > n[-1]
-      return nums.index(n) + 1
-    elsif target < n
-      return i
+  # return the last index plus one if target is bigger than last item
+  return (nums.index(nums[-1]) + 1) if target > nums[-1]
+  # if target is less than a number in that array, return the index of that number because that is where the target would go
+  nums.each do |n|
+    if target < n
+      return nums.index(n)
     end
   end
 end
 
-# puts search_insert([1,3,5,6], 5)
+puts search_insert([1,3,5,6], 5)
 # => 2
-# puts search_insert([1,3,5,6], 2)
+puts search_insert([1,3,5,6], 2)
 # => 1
-# puts search_insert([1,3,5,6], 7)
+puts search_insert([1,3,5,6], 7)
 # = 4
-# puts search_insert([1,3,5,6], 0)
+puts search_insert([1,3,5,6], 0)
 # => 0
 puts search_insert([1,3,5], 4)
 # => 2
@@ -44,3 +42,5 @@ puts search_insert([1,3,5], 4)
 # end
 
 # puts search_insert([1,3,5], 4)
+
+
