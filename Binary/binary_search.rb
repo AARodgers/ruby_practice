@@ -15,7 +15,7 @@ r = Random.new
 search_arr = Array.new(arr_size) do
   r.rand(arr_size)
   # generates random numbers
-end.sorted
+end.sort
 # returns an array of random sorted nums from 0-999
 
 search_num = r.rand(arr_size)
@@ -35,4 +35,12 @@ def binary_search_iter(arr, el)
       min = mid + 1
     end
   end
+  if arr.include?(el)
+    return true
+  else
+    return false
+  end
 end
+
+result = binary_search_iter(search_arr, search_num)
+puts result.nil? ? "Could not find #{search_num}" : "Found #{search_num}"

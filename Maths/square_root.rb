@@ -26,17 +26,33 @@ def smallest_num(num)
 end
 
 def mid(num)
-  a = smallest_num(num) - 1
-  b = smallest_num(num)
-  puts "a = #{a}, b = #{b}"
+  a = (smallest_num(num) - 1).to_i
+  b = (smallest_num(num)).to_i
+  arr = (a..b).to_a
+  arr
 end
 
-def binary_search
+def binary_search(arr, num)
+  arr = [2, 3]
+  min = arr[0]
+  max = arr[1]
+  avg = (min + max) \ 2
+  val = avg * avg
+  while min <= max
+    if val == num
+      return avg
+    elsif
+      val < num then min = avg
+    else
+       if val > num then max = avg
+    end
+    binary_search(arr, num)
+  end
 end
 
 
-
-puts mid(5)
+puts binary_search([2,3], 5)
+# puts mid(5)
 # puts iterate(4)
 # puts smallest_num(5)
 # puts square_root_without_sqrt(4)
