@@ -4,6 +4,8 @@
 # element remains. Then recombines them by sorting until you have two arrays
 # again.
 
+numbers = [38, 27, 43, 3, 9, 82, 10]
+
 class MergeSort
   def sort(numbers)
     num_elements = numbers.length
@@ -14,12 +16,24 @@ class MergeSort
     half_of_elements = (num_elements / 2).round
     left = numbers.take(half_of_elements)
     right = numbers.drop(half_of_elements)
+
+    sorted_left = sort(left)
+    sorted_right = sort(right)
+
+    merge(sorted_left, sorted_right)
   end
 end
 
+merge_sort = MergeSort.new
+puts merge_sort.sort(numbers)
+
+
+merge_sort = MergeSort.new
+puts merge_sort.sort(numbers)
 
 # .round will round to nearest integer, but can also tell it to round to
 # certain amount of decimals, round(2) will round to two decimals
+# 2.5 will round to 2 and 2.6 will round to 3
 
 # .take will return the first (n) elements of an array .take(n)
 
