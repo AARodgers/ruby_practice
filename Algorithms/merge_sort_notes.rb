@@ -22,6 +22,24 @@ class MergeSort
 
     merge(sorted_left, sorted_right)
   end
+
+  def merge(left_array, right_array)
+    if right_array.empty?
+      return left_array
+    end
+
+    if left_array.empty?
+      return right_array
+    end
+
+    smallest_number = if left_array.first <= right_array.first
+      left_array.shift
+    else
+      right_array.shift
+    end
+
+
+  end
 end
 
 merge_sort = MergeSort.new
@@ -39,3 +57,10 @@ puts merge_sort.sort(numbers)
 
 # .drop will do opposite of take and return the elements after (n) elements
 # have been dropped. Ex. a = [1234] a.drop(2) = [3, 4]
+
+# .first will return the first few (n) elements of an array, if no number
+# is specified, it will return the first element of the array
+
+# .shift removes and returns the leading elements (n) from the array
+# when no argument is given, it removes and returns the first element
+# a = [1, 2, 3], a.shift = [1], a.shift(2) = [1, 2]
