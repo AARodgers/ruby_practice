@@ -32,13 +32,16 @@ class MergeSort
       return right_array
     end
 
+    # returns which number is smaller from the first two numbers of each array
     smallest_number = if left_array.first <= right_array.first
       left_array.shift
     else
       right_array.shift
     end
 
-
+    # continues doing the merge function
+    recursive = merge(left_array, right_array)
+    [smallest_number].concat(recursive)
   end
 end
 
@@ -64,3 +67,10 @@ puts merge_sort.sort(numbers)
 # .shift removes and returns the leading elements (n) from the array
 # when no argument is given, it removes and returns the first element
 # a = [1, 2, 3], a.shift = [1], a.shift(2) = [1, 2]
+
+# .concat(array2, array3)
+# array1 = [0, 1]
+# array2 = [2, 3]
+# array3 = [4, 5]
+# array1.concat(array2, array3) will add arrays: array2 and array3 to array1
+# array1.concat(array2, array3) = [0, 1, 2, 3, 4, 5]
