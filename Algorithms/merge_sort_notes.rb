@@ -10,7 +10,7 @@ class MergeSort
   def sort(numbers)
     num_elements = numbers.length
     if num_elements <= 1
-      return num_elements
+      return numbers
     end
 
     half_of_elements = (num_elements / 2).round
@@ -44,10 +44,6 @@ class MergeSort
     [smallest_number].concat(recursive)
   end
 end
-
-merge_sort = MergeSort.new
-puts merge_sort.sort(numbers)
-
 
 merge_sort = MergeSort.new
 puts merge_sort.sort(numbers)
